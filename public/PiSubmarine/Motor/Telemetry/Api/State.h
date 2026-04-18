@@ -8,9 +8,9 @@ namespace PiSubmarine::Motor::Telemetry::Api
 {
     struct State
     {
-        OperationalState OperationalState{};
-        Faults Faults{};
-        Warnings Warnings{};
+        OperationalState Operational{};
+        Faults ActiveFaults{};
+        Warnings ActiveWarnings{};
 
         [[nodiscard]] constexpr bool operator==(const State&) const = default;
     };
