@@ -1,7 +1,12 @@
 include("${_build_cmake_local}")
 
 message("Adding library: ${PISUBMARINE_MODULE_NAME}")
-add_library(${PISUBMARINE_MODULE_NAME} INTERFACE)
+add_library(${PISUBMARINE_MODULE_NAME} INTERFACE
+        "../public/PiSubmarine/Motor/Telemetry/Api/Faults.h"
+        "../public/PiSubmarine/Motor/Telemetry/Api/IProvider.h"
+        "../public/PiSubmarine/Motor/Telemetry/Api/OperationalState.h"
+        "../public/PiSubmarine/Motor/Telemetry/Api/State.h"
+        "../public/PiSubmarine/Motor/Telemetry/Api/Warnings.h")
 target_include_directories(${PISUBMARINE_MODULE_NAME} INTERFACE "../public")
 PiSubmarineInitTarget(${PISUBMARINE_MODULE_NAME})
 
